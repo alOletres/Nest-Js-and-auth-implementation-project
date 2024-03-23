@@ -21,3 +21,7 @@ DEV_PORT=3000
 2. Run `npm install` to install the dependencies
 3. Run `npm run seed` to seed test data to the database
 4. Run `npm run start` to start the server
+
+## Postman Test
+
+I inserted postman api folder for your test reference
