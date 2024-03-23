@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `auth` MODIFY `status` BOOLEAN NOT NULL DEFAULT true;
+
+-- AlterTable
+ALTER TABLE `user` MODIFY `role` ENUM('ADMIN', 'EMPLOYEE') NOT NULL DEFAULT 'EMPLOYEE';

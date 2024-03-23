@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "6dad0485-f853-4fc9-a1fd-5d3e056307e8",
+		"name": "Postman Take home API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18958041"
+	},
+	"item": [
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "alejandrooletres@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiV2F5bmUgTHVlaWx3aXR6IiwiY29udGFjdCI6IjEtMjA0LTM5MS00NTk5IiwiYWRkcmVzcyI6IkVhc3R2YWxlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzExMTc1ODkzLCJleHAiOjE3MTEyNjIyOTN9.f6540VRHQxOx1FoWp1lBAvsrb8Iql0O3pRTtG1If8V8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiV2F5bmUgTHVlaWx3aXR6IiwiY29udGFjdCI6IjEtMjA0LTM5MS00NTk5IiwiYWRkcmVzcyI6IkVhc3R2YWxlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzExMTc1ODkzLCJleHAiOjE3MTEyNjIyOTN9.f6540VRHQxOx1FoWp1lBAvsrb8Iql0O3pRTtG1If8V8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "John Doe",
+							"type": "text"
+						},
+						{
+							"key": "contact",
+							"value": "9828-292-00",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "US",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "EMPLOYEE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiV2F5bmUgTHVlaWx3aXR6IiwiY29udGFjdCI6IjEtMjA0LTM5MS00NTk5IiwiYWRkcmVzcyI6IkVhc3R2YWxlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzExMTc1ODkzLCJleHAiOjE3MTEyNjIyOTN9.f6540VRHQxOx1FoWp1lBAvsrb8Iql0O3pRTtG1If8V8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Al Oletres",
+							"type": "text"
+						},
+						{
+							"key": "contact",
+							"value": "980-987-000",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Pagadian City",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "EMPLOYEE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"2"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator prismaClassGenerator {
+  provider      = "prisma-class-generator"
+  output        = "./../src/_gen-prisma-classes"
+  makeIndexFile = "false"
+  dryRun        = "false"
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  contact   String
+  address   String    @db.Text
+  role      USER_ROLE @default(EMPLOYEE)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  Auth      Auth?
+}
+
+model Auth {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  status    Boolean  @default(true)
+  userId    Int      @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User     @relation(fields: [userId], references: [id])
+}
+
+enum USER_ROLE {
+  ADMIN
+  EMPLOYEE
+}
